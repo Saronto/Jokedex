@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {% if joke %}
+        <div class="text-center"><h1>Here's a free sample of pure fun</h1></div>
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-4">
+                        <a href="joke/show/{{ joke.id }}"><h5>{{  joke.name  }}</h5>
+                        </a>
+
+                    </td>
+                    <td class="col-8">
+                        <p>{{ joke.joke  }}</p>
+                    </td>
+                <tr>
+            </tbody>
+        </table>
+    {% else %}
+        <h2 class="text-center">No joke found</h2>
+    {% endif %}
+{% endblock %}

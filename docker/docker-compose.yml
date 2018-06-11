@@ -1,0 +1,32 @@
+version: '2'
+services:
+  web:
+    container_name: sympho-web
+    build:
+      context: ./web
+      args:
+      - LOCAL_USER_ID=$LOCAL_USER_ID
+      - LOCAL_GROUP_ID=$LOCAL_GROUP_ID
+    image: sympho/web
+    ports:
+    - "80:80"
+    volumes:
+    - ../src:/var/www
+    - ./log/apache:/var/log/apache/
+    depends_on:
+      - database
+    links:
+      - database:database
+
+  database:
+    container_name: sympho-database
+    image: mariadb:10
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=symfony
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    volumes:
+      - ./data/mysql:/var/lib/mysql
