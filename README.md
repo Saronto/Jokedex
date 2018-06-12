@@ -1,25 +1,25 @@
-#Jokedex
+# Jokedex
 
 Ceci est une application CRUD simple pour gérer un site de blagues
 
 /!\ Le port utilisé par défaut par le serveur apache est le port 80, veillez a bien le laisser libre ou le changer dans le fichier docker-compose.yml
 
-#Prérequis
+# Prérequis
 
-##Build des images docker
+## Build des images docker
 
 ```
 cd docker && ./build.sh
 ```
 
 
-##Lancement des containers docker
+## Lancement des containers docker
 
 ```
 cd docker && docker-compose up -d
 ```
 
-##Installation des vendors via composer et initialisation de la bdd
+## Installation des vendors via composer et initialisation de la bdd
 
 
 ```
@@ -29,7 +29,7 @@ cd /var/www/sympho && composer install
 php bin/console doctrine:schema:update --force
 ```
 
-#To Do
+# To Do
 
 * Ajouter un login admin pour l'édit/delete (SecurityComponent)
 
