@@ -28,8 +28,8 @@ su user
 cd /var/www/sympho && composer install
 ```
 
-To Do
-- 
+#To Do
+
 * Ajouter un login admin pour l'édit/delete (SecurityComponent)
 
 * Limiter le nombre de like/dislike par joke (check ip ?)
