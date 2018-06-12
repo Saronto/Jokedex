@@ -19,13 +19,14 @@ cd docker && ./build.sh
 cd docker && docker-compose up -d
 ```
 
-##Installation des vendors via composer
+##Installation des vendors via composer et initialisation de la bdd
 
 
 ```
 cd docker && ./exec.sh
 su user
 cd /var/www/sympho && composer install
+php bin/console doctrine:schema:update --force
 ```
 
 #To Do
@@ -36,4 +37,4 @@ cd /var/www/sympho && composer install
 
 * Utiliser l'attribut genre pour trier les jokes
 
-* Utiliser DoctrineFixturesBundle pour faire persister les objets dans la bdd
+* Utiliser DoctrineFixturesBundle avoir des valeurs de base dans la bdd
